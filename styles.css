@@ -12,7 +12,7 @@ img {
 
 .main_container {
   min-width: 100%;
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -148,3 +148,9 @@ button {
   }
 }
 
+.disclaimer {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #383838;
+  margin-top: 1rem;
+}
