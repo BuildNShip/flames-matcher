@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+img {
+  width: 20rem;
+  margin: auto;
+  display: block;
+}
+
+.main_container {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffcd;
+  color: #1d1d1d;
+}
+
+.first_view_container {
+  padding: 1rem;
+}
+
+.input_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input_box {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.input_box label {
+  margin-bottom: 0.5rem;
+}
+
+.input_box input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(238, 178, 14, 0.1);
+  border: none;
+}
+
+.heading {
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: 500;
+  color: #d06f03;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #d06f03;
+  color: #ffffcd;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(238, 178, 14, 0.1);
+  display: block;
+  margin: auto;
+}
+
+#result {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #d06f03;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.description {
+  max-width: 35rem;
+  text-align: center;
+}
+
+.full_form {
+  text-align: center;
+  color: #383838;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  height: 3rem;
+  border-top: 1px solid rgb(81, 80, 80);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffcd;
+}
+
+.footer a {
+  width: 100px;
+}
+
+.footer a img {
+  width: 100px;
+  height: 60%;
+  margin-left: 40px;
+}
+
+.social_container {
+  width: max-content;
+  height: 100%;
+  display: flex;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+.footer .social_container a {
+  height: 100%;
+  width: max-content;
+  color: #383838;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer a img {
+    margin-left: 14px;
+  }
+  .footer .social_container {
+    gap: 8px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  img {
+    width: 15rem;
+  }
+}
