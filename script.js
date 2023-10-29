@@ -39,7 +39,7 @@ function calculateFlames() {
       f: "You have good Friendship",
       l: "You guys are in Love",
       a: "Nice Affection",
-      m: "Happy Married LIfe",
+      m: "Happy Married Life",
       e: "You are Enemies",
       s: "You both are Siblings",
     };
@@ -47,3 +47,20 @@ function calculateFlames() {
     return meanings[flames];
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the button element
+  const buttonElement = document.getElementById('submit-button');
+
+  // Add keydown event listener to the document
+  document.addEventListener('keydown', function(event) {
+      // Check if the pressed key is "Enter"
+      if (event.keyCode === 13 || event.key === "Enter") {
+          // Prevent default behavior (like submitting a form)
+          event.preventDefault();
+          
+          // Trigger the button click
+          buttonElement.click();
+      }
+  });
+});
