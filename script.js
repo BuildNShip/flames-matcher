@@ -1,4 +1,5 @@
 // Function to calculate FLAMES result
+let globalVariable = "";
 function calculateFlames() {
   const name1 = document.getElementById("name1").value.toLowerCase();
   const name2 = document.getElementById("name2").value.toLowerCase();
@@ -29,6 +30,7 @@ function calculateFlames() {
 
     const resultDiv = document.getElementById("result");
     resultDiv.textContent = getFlamesMeaning(flames);
+    globalVariable = getFlamesMeaningWA(flames);
 
     const shareButton = document.getElementById("share-button");
     shareButton.style.display = "block";
@@ -85,10 +87,13 @@ shareButton.style.display = "none";
 function captureScreenshot() {
   html2canvas(document.body).then(function (canvas) {
     const resultDiv = document.getElementById("result");
-    
-    const name2 = document.getElementById("name2").value;
 
-    let shareContent = `🎉 Hey ${name2}! You won\'t believe it - we have got "${resultDiv.textContent}" on the FLAMES app by buildnship.\n\n Ready for a fun surprise? Try it yourself at flames.buildnship.in and see the magic! ✨🔥`;
+    const name2 = document.getElementById("name2").value;
+    const name1 = document.getElementById("name1").value;
+    const capitalized_name1 = name1.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+    const capitalized_name2 = name2.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+
+    let shareContent = `🎉 Hey! You won\'t believe it - ${capitalized_name1} and ${capitalized_name2} have got *"${globalVariable}"* on the FLAMES app by buildnship.\n\n Ready for a fun surprise? Try it yourself at flames.buildnship.in and see the magic! ✨🔥`;
 
     shareTextViaWhatsApp(shareContent);
   });
