@@ -19,6 +19,8 @@ img {
   align-items: center;
   background-color: #ffffcd;
   color: #1d1d1d;
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }
 
 .first_view_container {
@@ -58,7 +60,7 @@ img {
   color: #d06f03;
 }
 
-button {
+#submit-button {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: none;
@@ -68,8 +70,30 @@ button {
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 0.5rem 1rem rgba(238, 178, 14, 0.1);
-  display: block;
-  margin: auto;
+}
+
+#submit-button:hover {
+  background-color: #e2a500;
+}
+
+.share-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #d06f03;
+  color: #ffffcd;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(238, 178, 14, 0.1);
+}
+
+.buttons_container{
+  display: flex;
+  row-gap: 0.5rem;  
+  column-gap: 0.5rem;
+  justify-content: center;
+  flex-direction: row;
 }
 
 #result {

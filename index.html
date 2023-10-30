@@ -54,6 +54,8 @@
       data-id="500656c1-15f0-40fc-9865-041ec7b06838"
       data-utcoffset="6"
     ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
   </head>
   <body>
     <div class="main_container">
@@ -75,10 +77,20 @@
           </div>
         </div>
 
-        <button id="submit-button" onclick="calculateFlames()">
-          Kathikk 🔥
-        </button>
+        <div class="buttons_container">
+          <button id="submit-button" onclick="calculateFlames()">
+            Kathikk 🔥
+          </button>
 
+          <button
+            class="share-button"
+            id="share-button"
+            onclick="captureScreenshot();
+        "
+          >
+            Share <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </div>
         <div id="result"></div>
 
         <div class="description">
@@ -88,7 +100,9 @@
             calc!🎉
           </p>
         </div>
-        <p class="disclaimer">Disclaimer: No data is being collected from the above form :)</p>
+        <p class="disclaimer">
+          Disclaimer: No data is being collected from the above form :)
+        </p>
         <div class="footer">
           <a href="https://buildnship.in/">
             <img src="./assets/logo.png" alt="logo" />

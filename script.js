@@ -28,9 +28,10 @@ function calculateFlames() {
     }
 
     const resultDiv = document.getElementById("result");
-    console.log(resultDiv);
     resultDiv.textContent = getFlamesMeaning(flames);
-    console.log(getFlamesMeaning(flames));
+
+    const shareButton = document.getElementById("share-button");
+    shareButton.style.display = "block";
   }
 
   // Function to get the meaning of the FLAMES result
@@ -46,21 +47,55 @@ function calculateFlames() {
 
     return meanings[flames];
   }
+
+  function getFlamesMeaningWA(flames) {
+    const meanings = {
+      f: "Friendship",
+      l: "Love",
+      a: "Affection",
+      m: "Married Life",
+      e: "Enemies",
+      s: "Siblings",
+    };
+
+    return meanings[flames];
+  }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Get the button element
-  const buttonElement = document.getElementById('submit-button');
+  const buttonElement = document.getElementById("submit-button");
 
   // Add keydown event listener to the document
-  document.addEventListener('keydown', function(event) {
-      // Check if the pressed key is "Enter"
-      if (event.keyCode === 13 || event.key === "Enter") {
-          // Prevent default behavior (like submitting a form)
-          event.preventDefault();
-          
-          // Trigger the button click
-          buttonElement.click();
-      }
+  document.addEventListener("keydown", function (event) {
+    // Check if the pressed key is "Enter"
+    if (event.keyCode === 13 || event.key === "Enter") {
+      // Prevent default behavior (like submitting a form)
+      event.preventDefault();
+
+      // Trigger the button click
+      buttonElement.click();
+    }
   });
 });
+
+const shareButton = document.getElementById("share-button");
+shareButton.style.display = "none";
+
+function captureScreenshot() {
+  html2canvas(document.body).then(function (canvas) {
+    const resultDiv = document.getElementById("result");
+    
+    const name2 = document.getElementById("name2").value;
+
+    let shareContent = `🎉 Hey ${name2}! You won\'t believe it - we have got "${resultDiv.textContent}" on the FLAMES app by buildnship.\n\n Ready for a fun surprise? Try it yourself at flames.buildnship.in and see the magic! ✨🔥`;
+
+    shareTextViaWhatsApp(shareContent);
+  });
+}
+
+function shareTextViaWhatsApp(text) {
+  let whatsappURL =
+    "https://api.whatsapp.com/send?text=" + encodeURIComponent(text);
+  window.open(whatsappURL, "_blank");
+}
